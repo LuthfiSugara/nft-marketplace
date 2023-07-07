@@ -1,0 +1,20 @@
+{
+    "description": "Blueish creature. Very fast and strong.",
+    "image": "https://gateway.pinata.cloud/ipfs/QmbTp4n88Yjj931Gg4qz4LYLuCSdQwCv6sn5u8fzs16KsB?_gl=1*1eb3b5a*_ga*MTg4MzM5MDc4My4xNjc1MzA4OTgw*_ga_5RMPXG14TE*MTY3NTMwODk4MC4xLjEuMTY3NTMwOTQzNC40Mi4wLjA.",
+    "name": "Eincode Creature #2",
+    "attributes": [
+      {
+        "trait_type": "attack",
+        "value": "60"
+      },
+      {
+        "trait_type": "health",
+        "value": "50"
+      },
+      {
+        "trait_type": "speed",
+        "value": "70"
+      }
+    ]
+  }
+  

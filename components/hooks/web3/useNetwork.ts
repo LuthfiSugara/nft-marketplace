@@ -8,6 +8,7 @@ const NETWORK: {[k: string]: string} = {
     5: "Goerli Test Network",
     42: "Kovan Test Network",
     56: "Binance Smart Chain",
+    97: "Bnb Testnet",
     1337: "Ganache",
 }
 
@@ -18,6 +19,7 @@ type UseNetworkResponse = {
     isLoading: boolean;
     isSupported: boolean;
     targetNetwork: string;
+    isConnectedToNetwork: boolean;
 }
 
 type NetworkHookFactory = CryptoHookFactory<string, UseNetworkResponse>
@@ -40,12 +42,15 @@ export const hookFactory: NetworkHookFactory = ({provider, isLoading}) => () => 
         }
     )
 
+    const isSupported = data === targetNetwork;
+
     return {
         ...swr,
         data,
         isValidating,
         targetNetwork,
-        isSupported: data === targetNetwork,
+        isSupported,
+        isConnectedToNetwork: !isLoading && isSupported,
         isLoading: isLoading as boolean,
     };
 }

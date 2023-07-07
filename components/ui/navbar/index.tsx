@@ -3,7 +3,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import ActiveLink from '../link';
 import { useAccount, useNetwork } from '@hooks/web3';
 import { connect } from 'http2';
-import Walletbar from './walletBar';
+import Walletbar from './Walletbar';
 
 const navigation = [
   { name: 'MarketPlace', href: '/', current: true },

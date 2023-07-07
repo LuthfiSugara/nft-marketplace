@@ -1,19 +1,21 @@
-import { NFTItem } from 'components/ui'
 import React, { FunctionComponent } from 'react'
-import { NftMeta } from '../../../../types/nft'
+import { NFTItem } from 'components/ui'
+import { useListedNfts } from '@hooks/web3'
 
-type NftListProps = {
-  nfts: NftMeta[]
-}
+const NftList: FunctionComponent = () => {
 
-const NftList: FunctionComponent<NftListProps> = ({nfts}) => {
+  const { nfts } = useListedNfts();
+
   return (
     <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-      {nfts.map((nft, index) => {
+      {nfts.data?.map((nft, index) => {
         return (
-        <div key={index} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-          <NFTItem item={nft} />
-        </div>
+          <div key={index} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            <NFTItem 
+              item={nft} 
+              buyNft={nfts.buyNft}
+            />
+          </div>
         )
       })}
     </div>
